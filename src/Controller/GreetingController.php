@@ -28,7 +28,6 @@ final class GreetingController extends Controller
     {
         return $this->render('@AcmeSyliusExamplePlugin/dynamic_greeting.html.twig', ['greeting' => $this->getGreeting($name)]);
     }
-
     /**
      * @param string|null $name
      *

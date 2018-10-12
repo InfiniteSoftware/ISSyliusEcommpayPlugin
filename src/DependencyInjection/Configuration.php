@@ -15,7 +15,7 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('acme_sylius_example_plugin');
+        $rootNode = $treeBuilder->root('is_ecommpay_plugin');
 
         return $treeBuilder;
     }
