@@ -16,12 +16,7 @@ final class EcommpayGatewayConfigurationType extends AbstractType
     {
         $builder
             ->add('projectId', TextType::class)
-            ->add('SecretKey', TextType::class)
-            ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
-                $data = $event->getData();
-
-                $data['payum.http_client'] = '@sylius.payum.http_client';
-            })
+            ->add('secretKey', TextType::class)
         ;
     }
 

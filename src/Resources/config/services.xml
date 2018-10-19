@@ -10,5 +10,9 @@
             <argument type="string">Payum\Ecommpay\EcommpayGatewayFactory</argument>
             <tag name="payum.gateway_factory_builder" factory="ecommpay"/>
         </service>
+        <service id="ecommpay.extension.notify_request_validator" class="Payum\Ecommpay\NotifyRequestValidator">
+            <argument type="service" id="sylius.repository.order"/>
+            <tag name="payum.extension" factory="ecommpay"/>
+        </service>
     </services>
 </container>
