@@ -10,9 +10,14 @@
             <argument type="string">Payum\Ecommpay\EcommpayGatewayFactory</argument>
             <tag name="payum.gateway_factory_builder" factory="ecommpay"/>
         </service>
-        <service id="ecommpay.extension.notify_request_validator" class="Payum\Ecommpay\NotifyRequestValidator">
+        <service id="ecommpay.extension.notify_request_validator" class="Payum\Ecommpay\NotifyRequestValidatorExtension">
             <argument type="service" id="sylius.repository.order"/>
             <argument type="service" id="logger"/>
+            <tag name="payum.extension" factory="ecommpay"/>
+        </service>
+        <service id="is.ecommpay.extension.locale" class="IS\SyliusEcommpayPlugin\LocaleExtension">
+            <argument type="service" id="router"/>
+            <argument type="string">sylius_shop_order_thank_you</argument>
             <tag name="payum.extension" factory="ecommpay"/>
         </service>
     </services>
